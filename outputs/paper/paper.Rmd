@@ -1,0 +1,259 @@
+---
+title: "My title"
+subtitle: "My subtitle if needed"
+author: 
+  - First author
+  - Another author
+thanks: "Code and data are available at: LINK."
+date: "`r format(Sys.time(), '%d %B %Y')`"
+abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+output:
+  bookdown::pdf_document2
+toc: FALSE
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(palmerpenguins)
+data <- read.csv("cleaned.csv", header=T)
+```
+
+# Introduction
+
+You can and should cross-reference sections and sub-sections. For instance, Section \@ref(data). R Markdown automatically makes the sections lower case and adds a dash to spaces to generate labels, for instance, Section \@ref(first-discussion-point). 
+
+
+
+# Data
+
+Our data is of penguins (Figure \@ref(fig:bills)).
+
+```{r bills, fig.cap="Bills of penguins", echo = FALSE}
+include_graphics(here::here("inputs/literature/Figure Tanz.png"))
+```
+
+Talk more about it.
+
+
+```{r}
+data |> 
+  select(region, no_mass_media_f, no_mass_media_m, all_f, all_m, number_f, number_m) |> 
+  #slice(1:10) |> 
+  kable(
+    caption = "First ten rows of a dataset of factors that contribute to commonality of marriage",
+    col.names = c("Region", "No Media Female", "No Media Male",
+                  "All Media Female", "All Media Male", "Total Number of Female",
+                  "Total Number of Male"),
+    digits = 1,
+    booktabs = TRUE, 
+    linesep = "")
+```
+
+
+Also bills and their average (Figure \@ref(fig:billssssss)). (Notice how you can change the height and width so they don't take the whole page?)
+
+```{r}
+data |> 
+  select(-X)|>
+  datasummary_skim(type = "numeric",
+                   title = "Summary of numerical ditrubution indicators 
+                   variables for regions")
+```
+
+
+```{r billssssss, fig.cap="More bills of penguins", echo = FALSE, fig.width=20, fig.height=4}
+
+
+fm<- 
+  data |>
+  #slice(1:10) |> 
+  ggplot(mapping = aes(x = reorder(region, -no_mass_media_f), y = no_mass_media_f, fill=region)) +
+  geom_bar(stat = "identity", show.legend = FALSE)+
+  labs(x = "Region", y = "Females Without Mass Media")+
+  theme_classic() +
+  scale_fill_viridis(discrete = TRUE)
+                     #option = "magma")
+
+m<- 
+  data |>
+  #slice(1:10) |> 
+  ggplot(mapping = aes(x = reorder(region, -no_mass_media_m), y = no_mass_media_m, fill=region)) +
+  geom_bar(stat = "identity", show.legend = FALSE)+
+  labs(x = "Region", y = "Males Without Mass Media")+
+  theme_classic() +
+  scale_fill_viridis(discrete = TRUE)
+
+fm/m
+
+```
+
+Talk way more about it. 
+
+```{r billssssss, fig.cap="More bills of penguins", echo = FALSE, fig.width=20, fig.height=4}
+
+
+fm2<- 
+  data |>
+  #slice(1:10) |> 
+  ggplot(mapping = aes(x = reorder(region, -all_f), y = all_f, fill=region)) +
+  geom_bar(stat = "identity", show.legend = FALSE)+
+  labs(x = "Region", y = "Females With All 3 Mass Media")+
+  theme_classic() +
+  scale_fill_viridis(discrete = TRUE,
+                     option = "magma")
+
+m2<- 
+  data |>
+  #slice(1:10) |> 
+  ggplot(mapping = aes(x = reorder(region, -all_m), y = all_m, fill=region)) +
+  geom_bar(stat = "identity", show.legend = FALSE)+
+  labs(x = "Region", y = "Males With All 3 Mass Media")+
+  theme_classic() +
+  scale_fill_viridis(discrete = TRUE,
+                     option = "magma")
+
+fm2/m2
+
+```
+
+
+
+```{r billssssss, fig.cap="More bills of penguins", echo = FALSE, fig.width=10, fig.height=10}
+
+newsm<- 
+data |>
+  ggplot(mapping = aes(x = all_m, y = read_news_weekly_m, color = region)) +
+  geom_point()+
+  labs(x = "All Males With Media", y = "Read Newspaper Weekly")+
+  theme(legend.position="top")+
+  scale_colour_viridis_d()
+
+telem<- 
+data |>
+  ggplot(mapping = aes(x = all_m, y = watch_tele_weekly_m, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(x = "All Males With Media", y = "Watch Television Weekly")+
+  scale_colour_viridis_d()
+
+
+radm<- 
+data |>
+  ggplot(mapping = aes(x = all_m, y = listen_radio_weekly_m, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(x = "All Males With Media", y = "Listen to Radio Weekly ")+
+  scale_colour_viridis_d()
+
+newsm/telem/radm
+
+```
+
+```{r billssssss, fig.cap="More bills of penguins", echo = FALSE, fig.width=10, fig.height=10}
+
+newsf<- 
+data |>
+  ggplot(mapping = aes(x = all_f, y = read_news_weekly_f, color = region)) +
+  geom_point()+
+  labs(x = "All Females With Media", y = "Read Newspaper Weekly")+
+  theme(legend.position="top")+
+  scale_colour_viridis_d(option = "plasma")
+
+telef<- 
+data |>
+  ggplot(mapping = aes(x = all_f, y = watch_tele_weekly_f, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(x = "All Females With Media", y = "Watch Television Weekly")+
+  scale_colour_viridis_d(option = "plasma")
+
+
+radf<- 
+data |>
+  ggplot(mapping = aes(x = all_f, y = listen_radio_weekly_f, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(x = "All Females With Media", y = "Listen to Radio Weekly ")+
+  scale_colour_viridis_d(option = "plasma")
+
+newsf/telef/radf
+
+```
+
+```{r}
+
+rwf<- 
+data |>
+  ggplot(mapping = aes(x = listen_radio_weekly_f, y = watch_tele_weekly_f, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(title= "Females", x = "Listen to Radio Weekly", y = "Watch Television Weekly")
+
+rnf<- 
+data |>
+  ggplot(mapping = aes(x = listen_radio_weekly_f, y = read_news_weekly_f, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(x = "Listen to Radio Weekly", y = "Read Newspaper Weekly")
+
+nwf<- 
+data |>
+  ggplot(mapping = aes(x = read_news_weekly_f, y = watch_tele_weekly_f, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(x = "Read Newspaper Weekly", y = "Watch Television Weekly")
+rwf/rnf/nwf
+
+```
+
+```{r}
+
+rwm<- 
+data |>
+  ggplot(mapping = aes(x = listen_radio_weekly_m, y = watch_tele_weekly_m, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(title= "Males", x = "Listen to Radio Weekly", y = "Watch Television Weekly")
+
+rnm<-
+data |>
+  ggplot(mapping = aes(x = listen_radio_weekly_m, y = read_news_weekly_m, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(x = "Listen to Radio Weekly", y = "Read Newspaper Weekly")
+
+nwm<- 
+data |>
+  ggplot(mapping = aes(x = read_news_weekly_m, y = watch_tele_weekly_m, color = region)) +
+  geom_point(show.legend = FALSE)+
+  labs(x = "Read Newspaper Weekly", y = "Watch Television Weekly")
+rwm/rnm/nwm
+
+```
+
+# Results
+
+# Discussion
+
+## First discussion point
+
+If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+
+## Second discussion point
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+Weaknesses and next steps should also be included.
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+
+# Additional details
+
+
+\newpage
+
+
+# References
+
+
