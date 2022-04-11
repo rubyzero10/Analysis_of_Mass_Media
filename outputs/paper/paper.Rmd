@@ -3,7 +3,7 @@ title: "The Lack of Accecibility to Media Outlets in Tanzinia in 1996 May Explai
 subtitle: "Data largely uses data on females "
 author: 
   - Oluwabusayomi Adekuajo
-thanks: "Code and data are available at: https://github.com/rubyzero10/starter_folder-mainPaper4."
+thanks: "Code and data are available at: https://github.com/rubyzero10/Analysis_of_Mass_Media.git."
 date: "`r format(Sys.time(), '%d %B %Y')`"
 abstract: "The significance of communication on the development of a country cannot be overestimated as the ability to spread information to a large audience supports community and its progression. Lack of progression in developing countries raises the concern of whether beneficial effects of mass media can be observed.  In this paper the prevalence of mass media outlets in Tanzania in 1996 was determined, in which most individuals in rural did not have access to any media sources included. Our findings have implications to develop affordable access to media through public spaces."
 output:
@@ -389,7 +389,7 @@ Extract of the questions from @gebru2021datasheets
 1. *Has the dataset been used for any tasks already? If so, please provide a description.*
 	- The  dataset has not been used for any tasks already 
 2. *Is there a repository that links to any or all papers or systems that use the dataset? If so, please provide a link or other access point.*
-	- https://github.com/rubyzero10/starter_folder-mainPaper4
+	- https://github.com/rubyzero10/Analysis_of_Mass_Media.git
 3. *What (other) tasks could the dataset be used for?*
 	- The dataset could be used to see media use amoung age classes. 
 4. *Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (for example, stereotyping, quality of service issues) or other risks or harms (for example, legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms?*
