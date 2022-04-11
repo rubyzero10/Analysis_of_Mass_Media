@@ -19,7 +19,7 @@ packageVersion('janitor')
 set.seed(855)
 
 
-simulated_nmr_data <- 
+simulated_dhs_data <- 
   tibble(
     region = 
       c(
