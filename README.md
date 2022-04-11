@@ -4,7 +4,7 @@ We use the Tanzania DHS Final Reports , 1996 - available here: https://dhsprogra
 
 This repository is organized as follows:
 
-PDF is saved to ‘inputs’, in "literature" as Tanzinia pdf
+PDF is saved to ‘inputs’, in 'literature' as Tanzinia pdf
 
 Simulation of plan for usable dataset is saved in script ‘scripts/00-simulation.R’.
 
@@ -17,6 +17,6 @@ R code that draws on ‘raw_data.csv’ to clean and prepare the dataset is save
 
 Cleaned dataset is saved to 'outputs' as ‘outputs/data/cleaned_data.csv’.
 
-1. Inputs contains data and literature. 
-2. Output contains the folders data and paper. Paper includes a pdf of report, and R markdown that helped produced file, with a reference documented containing cited literature, along with cleaned data saves as cleaned.csv to be accessed in R markdown 
+1. Inputs contains literature from which data was extracted
+2. Output contains the folders data and paper. Paper includes a pdf of report, and R markdown that helped produced file, with a reference documented containing cited literature, along with cleaned data saved as cleaned.csv to be accessed in R markdown 
 3. Scripts included the R script that manipulated and cleaned raw data, to be presented in Output 
