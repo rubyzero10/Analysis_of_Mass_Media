@@ -102,7 +102,6 @@ data |>
 
 It is evident that there are gender influences on access to media as seen through Table \@ref(tab:summ). In the female category, the largest mean amongst variables is those with no access to media. This case is not observed in males as, listening to radio weekly is the largest mean seen. Access to all three media is observed to be the smallest mean in both genders, though men still occupy twice the mean of their female counterpart. Interested on how access to all three media and no mass media compared, Figures \@ref(fig:withoutmed) and \@ref(fig:withmedia)  were made. Figures \@ref(fig:withoutmed) visualizes lack of a mass media source and its distribution among individual regions of Tanznia. It is further shown that females, across all regions have, on average, less access to media compared to males. When comparing to Figure \@ref(fig:withmedia)  representing amount of those with access to all three media, results show that other than Dares Salaam, an urban city, all regions have less access to all media than those with no access to media. These results indicate lack of resources to economically support all three sources. 
 
-
 ```{r withoutmed, fig.cap="More women have no access to media ", echo = FALSE, fig.width=20, fig.height=4}
 
 
