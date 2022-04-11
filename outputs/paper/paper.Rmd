@@ -41,12 +41,12 @@ The remainder of the paper is split into four sections. Section \@ref(data) expl
 
 # Data
 
-Data was available in, PDF format, from the DHS Final Report from a 1996 survey in Tanzania. In a reproducible way, dataset was transformed, using the R statistical programming language @ citeR, to be manipulated and analysed. Figures and graphs were created with the packages ggplot2 @gg,  knitr @citeknit , kableExtra @citeextra, tidyr @citetid, dplyr @citedplyr, modelsummary @mod, patchwork @patch and tidyverse @citetidyverse. This report uses 20 observations of 13 variables. 
+Data was available in, PDF format, from the DHS Final Report from a 1996 survey in Tanzania. In a reproducible way, dataset was transformed, using the R statistical programming language @citeR, to be manipulated and analysed. Figures and graphs were created with the packages ggplot2 @gg,  knitr @citeknit , kableExtra @citeextra, tidyr @citetid, dplyr @citedplyr, modelsummary @mod, patchwork @patch and tidyverse @citetidyverse. This report uses 20 observations of 13 variables. 
 
 
 ## DHS 
 
-The 1996 Tanzania Demographic and Health Survey is a nationally representative survey with the main purpose to provide information on fertility, family planning, infant and child mortality, maternal and child health and nutrition, knowledge and attitudes of AIDS, and female circumcision(@tanzania). The TDHS is the third national samples survey of it its kind, practicing surveys since 1991. The general objected of the1996 TDHS, which concerned the data used, is national-level data that will allow the calculation of demographic rates, particularly fertility and childhood mortality rates(@tanzania). The purpose of the TDHS was to provide estimated to the whole country including rural and urban areas.
+The 1996 Tanzania Demographic and Health Survey is a nationally representative survey with the main purpose to provide information on fertility, family planning, infant and child mortality, maternal and child health and nutrition, knowledge and attitudes of AIDS, and female circumcision(@tanzania). The TDHS is the third national samples survey of it its kind, practicing surveys since 1991. The general objected of the 1996 TDHS, which concerned the data used, is national-level data that will allow the calculation of demographic rates, particularly fertility and childhood mortality rates(@tanzania). The purpose of the TDHS was to provide estimated to the whole country including rural and urban areas.
 
 ## Survey’s Methodology
 
